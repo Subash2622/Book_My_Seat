@@ -3,67 +3,70 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ticket Booking</title>
     <link
-      href="https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Round|Material+Icons+Sharp|Material+Icons+Two+Tone"
       rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
     />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Seat Reservation</title>
   </head>
   <body>
-    <div class="center">
-      <div class="tickets">
-        <div class="ticket-selector">
-          <div class="head">
-            <div class="title">Movie Name</div>
-          </div>
-          <div class="quantity-selector">
-            <select id="quantity">
-              <option value="1">1 Ticket</option>
-              <option value="2">2 Tickets</option>
-              <option value="3">3 Tickets</option>
-              <option value="4">4 Tickets</option>
-              <option value="5">5 Tickets</option>
-            </select>
-          </div>
-          <div class="seat-type">
-            <input type="radio" name="seat-type" id="premium" />
-            <label for="premium">Premium</label>
-            <input type="radio" name="seat-type" id="standard" checked />
-            <label for="standard">Standard</label>
-          </div>
-          <div class="seats">
-            <div class="status">
-              <div class="item">Available</div>
-              <div class="item">Booked</div>
-              <div class="item">Selected</div>
+    <div class="main_container">
+      <div class="main_container_inner">
+        <div class="App">
+          <div class="left">
+            <div class="dropdown">
+              <label for="tickettype">Ticket Type:</label>
+              <select id="tickettype">
+                <option value="Standard">Standard</option>
+                <option value="Premium">Premium</option>
+              </select>
+              <label for="qty">Ticket Quantity:</label>
+              <select id="qty">
+                <option value="">Qnty</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+              </select>
             </div>
-            <div class="all-seats"></div>
-          </div>
-          <div class="timings"></div>
-          <div class="price">
-            <div class="total">
-              <span><span class="count">0</span> Tickets</span>
-              <div class="amount">0</div>
+            <div class="container">
+              <!-- Seats will be dynamically generated here -->
             </div>
-            <button id="proceedButton" type="button">Proceed</button>
+            <button class="btn" id="proceedBtn">PROCEED</button>
           </div>
-        </div>
-      </div>
-      <!-- Modal for confirmation message -->
-      <div class="modal" id="confirmationModal">
-        <div class="modal-content">
-          <span class="close" id="closeModal">&times;</span>
-          <p>Your booking was confirmed.</p>
+          <div class="right">
+            <div>
+              <h3>Key to Seat Layout:</h3>
+              <ul>
+                <li>
+                  <img src="images/Black_Chair.png" alt="Available" />
+                  <p>Available</p>
+                </li>
+                <li>
+                  <img src="images/Red_Chair.png" alt="Unavailable" />
+                  <p>Unavailable</p>
+                </li>
+                <li>
+                  <img src="images/Green_Chair.png" alt="Your Selection" />
+                  <p>Your Selection</p>
+                </li>
+                <li>
+                  <img src="images/Purple_Chair.png" alt="Premium" />
+                  <p>Premium</p>
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-    <script src="index.js"></script>
+    <script src="main.js"></script>
   </body>
 </html>
